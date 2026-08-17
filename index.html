@@ -387,76 +387,41 @@ img {
   filter: blur(40px);
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 64px;
-  align-items: center;
+.hero-content {
+  max-width: 860px;
   position: relative;
   z-index: 1;
 }
 
-@media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    text-align: center;
-  }
-}
-
-.hero-image-wrapper {
-  position: relative;
-  max-width: 420px;
-  margin: 0 auto;
-}
-
-.hero-image-card {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--card-shadow), var(--glow-shadow);
-  border: 1px solid var(--border);
-  aspect-ratio: 4/5;
-  background: var(--bg-surface);
-}
-
-.hero-image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hero-image-card:hover img {
-  transform: scale(1.03);
-}
-
-.hero-badge-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 14px 18px;
+.hero-profile-header {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
+  margin-bottom: 24px;
 }
 
-.location-icon {
-  width: 36px;
-  height: 36px;
+.hero-avatar-thumb {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  box-shadow: 0 4px 18px var(--accent-glow);
   flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.hero-avatar-thumb:hover {
+  transform: scale(1.06);
+}
+
+.location-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: rgba(224, 169, 109, 0.25);
 }
 
 .hero-content .eyebrow {
@@ -1234,27 +1199,18 @@ img {
 <!-- HERO SECTION -->
 <section class="hero" id="hero">
   <div class="hero-glow"></div>
-  <div class="container hero-grid">
-    <div class="hero-image-wrapper reveal">
-      <div class="hero-image-card">
-        <img src="images/nivedita-portrait.jpg" alt="Nivedita Prakash Portrait">
-        <div class="hero-badge-overlay">
-          <div class="location-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  <div class="container">
+    <div class="hero-content reveal">
+      <div class="hero-profile-header">
+        <img class="hero-avatar-thumb" src="images/nivedita-portrait.jpg?v=2" alt="Nivedita Prakash">
+        <div>
+          <div class="eyebrow" style="margin-bottom: 4px;">
+            <span>Author &amp; Delivery Leader</span>
           </div>
-          <div>
-            <div style="font-size:12px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em;">Based In</div>
-            <div style="font-size:14px; font-weight:600; color:var(--text-main);">Bengaluru, India</div>
-          </div>
+          <h1 class="hero-title" style="margin-bottom: 0;">Nivedita Prakash</h1>
         </div>
       </div>
-    </div>
 
-    <div class="hero-content reveal">
-      <div class="eyebrow">
-        <span>Author &amp; Delivery Leader</span>
-      </div>
-      <h1 class="hero-title">Nivedita Prakash</h1>
       <p class="hero-subtitle">
         <strong>Author of two published books.</strong> Program &amp; Project Management Leader driving complex delivery across BFSI, Energy &amp; IT Services. <em>Motivator • Storyteller.</em>
       </p>
@@ -1265,6 +1221,10 @@ img {
         <li class="cred-pill">CSM</li>
         <li class="cred-pill">ITIL</li>
         <li class="cred-pill">CGI Associate Consultant</li>
+        <li class="cred-pill location-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Bengaluru, India
+        </li>
       </ul>
 
       <div class="hero-ctas">
